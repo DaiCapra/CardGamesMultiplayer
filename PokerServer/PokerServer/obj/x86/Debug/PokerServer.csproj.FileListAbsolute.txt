@@ -1,0 +1,21 @@
+C:\Users\Daniel\documents\visual studio 2010\Projects\PokerServer\PokerServer\bin\Debug\PokerServer.exe
+C:\Users\Daniel\documents\visual studio 2010\Projects\PokerServer\PokerServer\bin\Debug\PokerServer.pdb
+C:\Users\Daniel\documents\visual studio 2010\Projects\PokerServer\PokerServer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Daniel\documents\visual studio 2010\Projects\PokerServer\PokerServer\obj\x86\Debug\PokerServer.exe
+C:\Users\Daniel\documents\visual studio 2010\Projects\PokerServer\PokerServer\obj\x86\Debug\PokerServer.pdb
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\PokerServer\obj\x86\Debug\PokerServer.exe
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\PokerServer\obj\x86\Debug\PokerServer.pdb
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\PokerServer\bin\Debug\PokerServer.exe
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\PokerServer\bin\Debug\PokerServer.pdb
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\PokerServer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\PokerServer\bin\Debug\Core.dll
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\PokerServer\bin\Debug\Core.pdb
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\obj\x86\Debug\PokerServer.exe
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\obj\x86\Debug\PokerServer.pdb
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\PokerServer.exe
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\PokerServer.pdb
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\Core.dll
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\Core.pdb
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\Newtonsoft.Json.xml

@@ -1,0 +1,11 @@
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\Core\bin\Debug\Core.dll
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\Core\bin\Debug\Core.pdb
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\Core\obj\Debug\Core.dll
+C:\Users\Artmann\Desktop\oldStuff\Projects\PokerServer\Core\obj\Debug\Core.pdb
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\bin\Debug\Core.dll
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\bin\Debug\Core.pdb
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\bin\Debug\System.Net.Json.dll
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\obj\Debug\Core.dll
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\obj\Debug\Core.pdb
