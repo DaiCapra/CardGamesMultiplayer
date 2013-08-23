@@ -30,7 +30,7 @@ namespace PokerServer
         }
 
         public void ListenOnPort()
-        {
+        { 
 
             Console.WriteLine("Handler " + ID + " listens.");
             socket = server.Listener.AcceptSocket();

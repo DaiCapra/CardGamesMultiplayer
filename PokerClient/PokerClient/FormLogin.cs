@@ -12,34 +12,50 @@ using System.Security.Cryptography;
 
 namespace PokerClient
 {
-    public partial class frm_login : Form
+    public partial class FormLogin : Form
     {
         bool CONNECT_TO_SERVER = true; //remove later => form_activated
 
         string ip = "127.0.0.1";
         int port = 9010;
 
-        Client client; 
+        Client client;
+        FormLobby form2;
 
-        public frm_login()
+        public FormLogin()
         {
             InitializeComponent();
             TextBox.CheckForIllegalCrossThreadCalls = false;
         }
+        private void GoToLobby()
+        {
+            form2 = new FormLobby(client);
+            form2.Show();
+
+            this.Opacity = 0.0f;
+            this.ShowInTaskbar = false;
+            this.Hide();
+                  
+        }
 
         private void btn_signin_Click(object sender, EventArgs e)
         {
+            GoToLobby();
             if (client.Listener.Connected)
             {
-
+                if (client.Authenticate(tb_username.Text, tb_password.Text))
+                {
+                    
+                }
             }
         }
 
         private void frm_login_Activated(object sender, EventArgs e)
         {
+            client = new Client(ip, port, lb_statusBox);
             if (CONNECT_TO_SERVER)
             {
-                client = new Client(ip, port, lb_statusBox);
+                
                 Thread t1 = new Thread(client.ConnectToServer);
                 t1.Start();
             }

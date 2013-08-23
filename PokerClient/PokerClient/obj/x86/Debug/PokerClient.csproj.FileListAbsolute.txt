@@ -13,8 +13,9 @@ C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\P
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\bin\Debug\PokerClient.pdb
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\bin\Debug\MySql.Data.dll
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\PokerClient.frm_login.resources
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\PokerClient.Properties.Resources.resources
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\PokerClient.pdb
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\PokerClient.FormLogin.resources
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\PokerClient.FormLobby.resources

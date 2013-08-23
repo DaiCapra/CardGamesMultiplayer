@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PokerClient
 {
-    class Listener
+    public class Listener
     {
         private string ip;
         private int port;

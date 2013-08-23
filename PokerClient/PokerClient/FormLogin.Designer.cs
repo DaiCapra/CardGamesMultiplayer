@@ -1,6 +1,6 @@
 ﻿namespace PokerClient
 {
-    partial class frm_login
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -97,7 +97,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(161, 186);
             this.dataGridView1.TabIndex = 6;
             // 
-            // frm_login
+            // FormLogin
             // 
             this.AcceptButton = this.btn_signin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,7 +110,7 @@
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_username);
             this.Controls.Add(this.tb_username);
-            this.Name = "frm_login";
+            this.Name = "FormLogin";
             this.Text = "PokerClient";
             this.Activated += new System.EventHandler(this.frm_login_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

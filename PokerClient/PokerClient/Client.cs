@@ -10,18 +10,13 @@ using System.Windows.Forms;
 
 namespace PokerClient
 {
-    class Client
+    public class Client
     {
-        
-
-
         private const int CONNECTION_TIMEOUT = 5000;
         private const int CONNECTION_TRIES = 5;
 
         private ListBox statusBox;
         private Listener listener;
-
-        
 
         public Client(string ip, int port, ListBox lb)
         {
@@ -31,12 +26,13 @@ namespace PokerClient
 
         public bool Authenticate(string name, string password)
         {
-            bool successfulLogin; 
+            bool successfulLogin;
 
 
 
-            return false;
+            return true;
         }
+        
         public void ConnectToServer()
         {
             statusBox.Items.Add("Connecting to server...");
