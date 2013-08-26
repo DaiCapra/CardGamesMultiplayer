@@ -19,6 +19,8 @@ namespace PokerClient
         string ip = "127.0.0.1";
         int port = 9010;
 
+        bool firstTime = true;
+
         Client client;
         FormLobby form2;
 
@@ -40,24 +42,28 @@ namespace PokerClient
 
         private void btn_signin_Click(object sender, EventArgs e)
         {
-            GoToLobby();
+            //GoToLobby();
             if (client.Listener.Connected)
             {
-                if (client.Authenticate(tb_username.Text, tb_password.Text))
-                {
-                    
-                }
+                client.SendAuthenticate(tb_username.Text, tb_password.Text);
+               
+                Thread t2 = new Thread(client.Listener.Read);
+                t2.Start();
             }
         }
 
         private void frm_login_Activated(object sender, EventArgs e)
         {
-            client = new Client(ip, port, lb_statusBox);
-            if (CONNECT_TO_SERVER)
+            if (firstTime)
             {
-                
-                Thread t1 = new Thread(client.ConnectToServer);
-                t1.Start();
+                client = new Client(ip, port, lb_statusBox);
+                if (CONNECT_TO_SERVER)
+                {
+
+                    Thread t1 = new Thread(client.ConnectToServer);
+                    t1.Start();
+                }
+                firstTime = false;
             }
         }
     }

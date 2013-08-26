@@ -19,3 +19,7 @@ C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\P
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\PokerClient.pdb
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\PokerClient.FormLogin.resources
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\obj\x86\Debug\PokerClient.FormLobby.resources
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\bin\Debug\PokerClient.exe.config
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\bin\Debug\Core.dll
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\bin\Debug\System.Net.Json.dll
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerClient\PokerClient\bin\Debug\Core.pdb

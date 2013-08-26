@@ -58,7 +58,8 @@ namespace PokerServer
                 DateTime date = DateTime.Now;
                 string s = string.Format("{0:HH:mm:ss tt}", date);
                 //Console.WriteLine(s);
-                
+
+                Packet p = new Packet(PacketData.PacketType.ServerMessage.ToString(), PacketData.ServerType.Login.ToString());
                 /*
                 Packet p = new Packet(PacketData.PacketType.KeepAlive, "asd");
                 List<Object> list = new List<object>();
@@ -69,18 +70,59 @@ namespace PokerServer
 
                 string test = p.ListToJson(list);
                 Console.WriteLine(test);
-
-              
-                p.JSONTest(test);
                 */
 
                 //TimeOutCheck();
                 Thread.Sleep(10);
-                
-                
-                //Console.Read();
             }
         }
+        public void IncomingPacket(string message, int handlerID)
+        {
+            string s = message.Remove(0, 1);
+            Console.WriteLine(s);
+            Packet p = new Packet(PacketData.PacketType.KeepAlive.ToString(), "test");
+            List<object> objs = p.JSONToList(s);
+
+            try
+            {
+                string field1 = objs[0].ToString();
+                string type = PacketData.PacketType.Disconnect.ToString();
+                string value;
+
+                if (field1 == type)
+                {
+                    DisconnectbyIndex(handlerID);
+                }
+
+                type = PacketData.PacketType.GameMessage.ToString();
+
+                type = PacketData.PacketType.KeepAlive.ToString();
+
+                type = PacketData.PacketType.PlayerMessage.ToString();
+
+                type = PacketData.PacketType.ServerMessage.ToString();
+
+                Console.WriteLine(type);
+                Console.WriteLine(field1);
+
+                if (field1 == type)
+                {
+                    Console.WriteLine("huehuehue");
+                    value = objs[1].ToString();
+                    if (value == "Login")
+                    {
+                        Console.WriteLine("Handler " + handlerID + ", trying to log in");
+                    }
+                }
+            }
+            catch(Exception)
+            {
+                
+                throw;
+            }
+        }
+
+
         public void TimeOutCheck()
         {
             foreach (Handler h in handlers)
@@ -88,7 +130,7 @@ namespace PokerServer
                 h.TimeSinceKeepAlive++;
                 if ((h.ActiveConnection) && (h.TimeSinceKeepAlive > KEEPALIVE_CAP))
                 {
-                    Packet p = new Packet(PacketData.PacketType.Disconnect);
+                    Packet p = new Packet(PacketData.PacketType.Disconnect.ToString());
                     h.Write(p.ToString());
                     Console.WriteLine("Handler " + h.ID.ToString() + ": has timed out.");
                 }

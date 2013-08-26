@@ -9,3 +9,4 @@ C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\C
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\obj\Debug\Core.dll
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\obj\Debug\Core.pdb
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\Core\bin\Debug\System.Web.Extensions.dll

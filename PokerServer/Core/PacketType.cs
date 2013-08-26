@@ -17,9 +17,15 @@ namespace Core
             PlayerMessage
         }
 
+        public enum ServerType
+        {
+            Login,
+            
+        }
+
         public PacketData()
         {
-
+            
         }
     }
 }

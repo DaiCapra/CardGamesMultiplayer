@@ -19,3 +19,4 @@ C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\P
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\PokerServer.exe.config

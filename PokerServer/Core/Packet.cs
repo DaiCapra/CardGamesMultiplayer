@@ -5,29 +5,36 @@ using System.Text;
 using Core;
 using System.Web.Script.Serialization;
 using System.Net.Json;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
-namespace PokerServer
+namespace Core
 {
-    
-    class Packet
+    public class Packet
     {
-        private PacketData.PacketType packetType;
+        private string packetType;
         private string message;
+        private List<Object> packetInfo;
 
-        public Packet(PacketData.PacketType packetType, string message = "")
+        public Packet(string packetType, string message = "")
         {
             this.packetType = packetType;
             this.message = message;
+
+            PacketInfoToList();
         }
 
+        private void PacketInfoToList()
+        {
+            packetInfo = new List<object>();
+            packetInfo.Add(packetType);
+            packetInfo.Add(message);
+        }
         public string ListToJson(List<Object> list)
         {
             int index = 1;
             Dictionary<string, object> keyValues = new Dictionary<string, object>();
 
             //keyValues.Add("field0", packetType.ToString());
+
             foreach (object obj in list)
             {
                 string s = "field"+index.ToString();
@@ -41,12 +48,11 @@ namespace PokerServer
             return json;
         }
 
-        public void JSONTest(string json)
+        public List<object> JSONToList(string json)
         {
             JsonTextParser parser = new JsonTextParser();
             JsonObject obj = parser.Parse(json);
-            Console.WriteLine(obj);
-            
+            List<object> objects = new List<object>();
             foreach (JsonObject field in obj as JsonObjectCollection)
             {
                 string name = field.Name;
@@ -71,16 +77,21 @@ namespace PokerServer
                         throw new NotSupportedException();
                 }
 
-                Console.WriteLine("{0} {1} {2}",
-                    name.PadLeft(15), type.PadLeft(10), value.PadLeft(15));
+                objects.Add(value);
             }
-            
+
+            return objects;
         }
     
-        public PacketData.PacketType PacketType
+        public string PacketType
         {
             set { packetType = value; }
             get { return packetType; }
+        }
+        public List<object> PacketInfo
+        {
+            set { packetInfo = value; }
+            get { return packetInfo; }
         }
         public string Message
         {

@@ -71,8 +71,8 @@ namespace PokerServer
                         {
                             
                             lastMsg = s;
-                            Console.WriteLine("Handler " + ID + ": " + s);
-                            server.Broadcast(s, ID);
+                            server.IncomingPacket(s, handlerID);
+                            //Console.WriteLine("Handler " + ID + ": " + s);
                         }
                         Thread.Sleep(10);
                     }
