@@ -20,3 +20,5 @@ C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\P
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\PokerServer.exe.config
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\MySql.Data.dll
+C:\Users\Artmann\Documents\Visual Studio 2010\Projects\PokerServer\PokerServer\PokerServer\bin\Debug\MySql.Web.dll

@@ -6,12 +6,16 @@ using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using MySql.Data.MySqlClient;
 using Core;
+
 
 namespace PokerServer
 {
     class Server
     {
+        private string DatabaseConnectionString = "Server=localhost;Database=blog;Uid=root;Pwd=;";
+
         private const int MAX_CONNECTIONS = 200;
         private const int KEEPALIVE_CAP = 30;
 
@@ -25,6 +29,10 @@ namespace PokerServer
 
         private int currentConnections;
         private int connectionIndex;
+
+        private MySqlConnection databaseConnection;
+        private MySqlDataReader databaseReader;
+        private MySqlCommand databaseCommand;
 
         public Server(string ip, int port)
         {
@@ -41,6 +49,9 @@ namespace PokerServer
             try
             {
                 Console.WriteLine("Server started on: " + ip + ":" + port.ToString());
+                InitDatabase();
+                ReadFromDatabase();
+
                 listener.Start();
                 GetNewConnection();
             }
@@ -49,6 +60,54 @@ namespace PokerServer
                 Console.WriteLine("Couldnt start server!");
                 Console.WriteLine(e.ToString());
                 throw;
+            }
+        }
+
+        private bool InitDatabase()
+        {
+            databaseConnection = new MySqlConnection(DatabaseConnectionString);
+           
+            //cmd = connection.CreateCommand();;
+            //cmd.CommandText = "SELECT * FROM users";
+            
+
+            try
+            {
+                databaseConnection.Open();
+                Console.WriteLine("Connection to user database established");
+                return true;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error connecting to user database");
+                return false;
+            }
+            /*
+            
+            */
+        }
+        private void ReadFromDatabase()
+        {
+            databaseCommand = databaseConnection.CreateCommand();
+            databaseCommand.CommandText = "SELECT * FROM users";
+
+            try
+            {
+                databaseReader = databaseCommand.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                
+            }
+            if (databaseReader != null)
+            {
+                while (databaseReader.Read())
+                {
+                    for (int i = 0; i < databaseReader.FieldCount; i++)
+                    {
+                        Console.WriteLine(databaseReader.GetValue(i).ToString());
+                    }
+                }
             }
         }
         public void Update()
@@ -60,18 +119,7 @@ namespace PokerServer
                 //Console.WriteLine(s);
 
                 Packet p = new Packet(PacketData.PacketType.ServerMessage.ToString(), new string[]{PacketData.ServerType.Login.ToString()});
-                /*
-                Packet p = new Packet(PacketData.PacketType.KeepAlive, "asd");
-                List<Object> list = new List<object>();
-                list.Add("huehueheuhee");
-                list.Add(25.5);
-                list.Add(false);
-                
-
-                string test = p.ListToJson(list);
-                Console.WriteLine(test);
-                */
-
+        
                 //TimeOutCheck();
                 Thread.Sleep(10);
             }
