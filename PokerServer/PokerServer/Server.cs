@@ -34,12 +34,15 @@ namespace PokerServer
         private MySqlDataReader databaseReader;
         private MySqlCommand databaseCommand;
 
+        private List<User> users;
+
         public Server(string ip, int port)
         {
             this.ip = ip;
             this.port = port;
             handlers = new List<Handler>();
             readThreads = new List<Thread>();
+            users = new List<User>();
 
             IPAddress address = IPAddress.Parse(ip);
             listener = new TcpListener(address, port);
@@ -66,11 +69,7 @@ namespace PokerServer
         private bool InitDatabase()
         {
             databaseConnection = new MySqlConnection(DatabaseConnectionString);
-           
-            //cmd = connection.CreateCommand();;
-            //cmd.CommandText = "SELECT * FROM users";
-            
-
+          
             try
             {
                 databaseConnection.Open();
@@ -82,9 +81,6 @@ namespace PokerServer
                 Console.WriteLine("Error connecting to user database");
                 return false;
             }
-            /*
-            
-            */
         }
         private void ReadFromDatabase()
         {
@@ -103,9 +99,32 @@ namespace PokerServer
             {
                 while (databaseReader.Read())
                 {
-                    for (int i = 0; i < databaseReader.FieldCount; i++)
+                    string name = "";
+                    string email = "";
+                    string password = "";
+                    string salt = "";
+
+
+                    for (int i = 1; i < databaseReader.FieldCount; i++)
                     {
-                        Console.WriteLine(databaseReader.GetValue(i).ToString());
+                        string s = databaseReader.GetValue(i).ToString();
+                        Console.WriteLine("i "+i+": "+ s);
+                        switch (i)
+                        {
+                            case 1:
+                                name = s;
+                                break;
+                            case 2:
+                                email = s;
+                                break;
+                            case 3:
+                                password = s;
+                                break;
+                            case 4:
+                                salt = s;
+                                users.Add(new User(name, email, password, salt));
+                                break;
+                        }
                     }
                 }
             }
