@@ -28,7 +28,8 @@ namespace PokerClient
 
         public void SendAuthenticate(string name, string password)
         {
-            Packet p = new Packet(PacketData.PacketType.ServerMessage.ToString() , PacketData.ServerType.Login.ToString());
+            string[] messages = new string[] {PacketData.ServerType.Login.ToString(), name, password};
+            Packet p = new Packet(PacketData.PacketType.ServerMessage.ToString() , messages);
             string s = p.ListToJson(p.PacketInfo);
             listener.Write(s);
         }

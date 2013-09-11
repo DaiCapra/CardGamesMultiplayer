@@ -11,13 +11,13 @@ namespace Core
     public class Packet
     {
         private string packetType;
-        private string message;
+        private string[] messages;
         private List<Object> packetInfo;
 
-        public Packet(string packetType, string message = "")
+        public Packet(string packetType, string[] messages)
         {
             this.packetType = packetType;
-            this.message = message;
+            this.messages = messages;
 
             PacketInfoToList();
         }
@@ -26,7 +26,9 @@ namespace Core
         {
             packetInfo = new List<object>();
             packetInfo.Add(packetType);
-            packetInfo.Add(message);
+            
+            foreach(string s in messages)
+                packetInfo.Add(s);
         }
         public string ListToJson(List<Object> list)
         {
@@ -93,9 +95,9 @@ namespace Core
             set { packetInfo = value; }
             get { return packetInfo; }
         }
-        public string Message
+        public string[] Messages
         {
-            get{return message;}
+            get{return messages;}
         }
     }
 }

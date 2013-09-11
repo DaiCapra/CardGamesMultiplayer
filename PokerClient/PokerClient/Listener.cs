@@ -59,17 +59,22 @@ namespace PokerClient
         {
             while (true)
             {
-                
-                byte[] bb = new byte[100];
-                int k = stream.Read(bb, 0, 100);
+                try
+                {
+                    byte[] bb = new byte[100];
+                    int k = stream.Read(bb, 0, 100);
 
-                char[] c = new char[k];
+                    char[] c = new char[k];
 
-                for (int i = 0; i < k; i++)
-                    c[i] = Convert.ToChar(bb[i]);
+                    for (int i = 0; i < k; i++)
+                        c[i] = Convert.ToChar(bb[i]);
 
-                string s = new string(c);
-                Thread.Sleep(10);
+                    string s = new string(c);
+                    Thread.Sleep(10);
+                }
+                catch (Exception e)
+                {
+                }
             }
         }
 

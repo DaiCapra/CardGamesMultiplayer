@@ -59,7 +59,7 @@ namespace PokerServer
                 string s = string.Format("{0:HH:mm:ss tt}", date);
                 //Console.WriteLine(s);
 
-                Packet p = new Packet(PacketData.PacketType.ServerMessage.ToString(), PacketData.ServerType.Login.ToString());
+                Packet p = new Packet(PacketData.PacketType.ServerMessage.ToString(), new string[]{PacketData.ServerType.Login.ToString()});
                 /*
                 Packet p = new Packet(PacketData.PacketType.KeepAlive, "asd");
                 List<Object> list = new List<object>();
@@ -80,7 +80,7 @@ namespace PokerServer
         {
             string s = message.Remove(0, 1);
             Console.WriteLine(s);
-            Packet p = new Packet(PacketData.PacketType.KeepAlive.ToString(), "test");
+            Packet p = new Packet(PacketData.PacketType.KeepAlive.ToString(), new string[]{"test"});
             List<object> objs = p.JSONToList(s);
 
             try
@@ -102,12 +102,11 @@ namespace PokerServer
 
                 type = PacketData.PacketType.ServerMessage.ToString();
 
-                Console.WriteLine(type);
-                Console.WriteLine(field1);
+                //Console.WriteLine(type);
+                //Console.WriteLine(field1);
 
                 if (field1 == type)
                 {
-                    Console.WriteLine("huehuehue");
                     value = objs[1].ToString();
                     if (value == "Login")
                     {
@@ -117,7 +116,6 @@ namespace PokerServer
             }
             catch(Exception)
             {
-                
                 throw;
             }
         }
@@ -130,7 +128,7 @@ namespace PokerServer
                 h.TimeSinceKeepAlive++;
                 if ((h.ActiveConnection) && (h.TimeSinceKeepAlive > KEEPALIVE_CAP))
                 {
-                    Packet p = new Packet(PacketData.PacketType.Disconnect.ToString());
+                    Packet p = new Packet(PacketData.PacketType.Disconnect.ToString(),new string[]{"disconnect"});
                     h.Write(p.ToString());
                     Console.WriteLine("Handler " + h.ID.ToString() + ": has timed out.");
                 }
